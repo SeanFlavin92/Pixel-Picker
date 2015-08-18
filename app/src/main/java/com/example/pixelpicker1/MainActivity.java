@@ -32,6 +32,9 @@ public class MainActivity extends Activity {
 
     public static boolean hasColour = false;
 
+    public static CustomViewCrosshair customViewCrosshair ;
+    public static CustomView2 customView2 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,9 @@ public class MainActivity extends Activity {
         highLightSwatch[1] = new highLightSwatch() ;
         highLightSwatch[2] = new highLightSwatch() ;
         highLightSwatch[3] = new highLightSwatch() ;
+
+        customViewCrosshair = (CustomViewCrosshair) findViewById(R.id.customViewCrosshair) ;
+        customView2 = (CustomView2) findViewById(R.id.customView2) ;
 
         setContentView(R.layout.activity_main);
     }
