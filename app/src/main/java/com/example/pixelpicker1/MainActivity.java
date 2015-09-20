@@ -31,8 +31,6 @@ public class MainActivity extends Activity {
     static highLightSwatch[] highLightSwatch = new highLightSwatch[4] ;
 
     public static boolean hasColour = false;
-
-    public static CustomViewCrosshair customViewCrosshair ;
     public static CustomView2 customView2 ;
 
     @Override
@@ -49,13 +47,12 @@ public class MainActivity extends Activity {
         highLightSwatch[2] = new highLightSwatch() ;
         highLightSwatch[3] = new highLightSwatch() ;
 
-        customViewCrosshair = (CustomViewCrosshair) findViewById(R.id.customViewCrosshair) ;
         customView2 = (CustomView2) findViewById(R.id.customView2) ;
 
         setContentView(R.layout.activity_main);
     }
 
-    //loading an image from the gallery
+    //Getting an image from the gallery
     public void aMethod(View v) {
         Intent imageLoader = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -63,7 +60,7 @@ public class MainActivity extends Activity {
         startActivityForResult(imageLoader, RESULT_LOAD_IMAGE); // new
     }
 
-    //loading an image from the camera after taking a picture
+    //Getting an image from the camera after taking a picture
     public void bMethod(View v) {
         PackageManager pm = this.getPackageManager();
         if (pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
